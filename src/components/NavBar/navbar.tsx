@@ -1,0 +1,82 @@
+import React from 'react';
+
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+import { Button } from "@/components/ui/button"
+import { House, ContactRound, Calendar, CircleDollarSign, NotebookPen } from "lucide-react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '../ui/accordion';
+import Link from 'next/link';
+
+export default function NavBar() {
+  return(
+    <header className='mx-5 border-r-1 w-60'>
+        {/* <Sheet>
+            <SheetTrigger asChild>
+                <Button variant="ghost" size="icon" className="md:hidden">
+                    <Menu className="h-6 w-6" />
+                </Button>
+                </SheetTrigger>
+                <SheetContent side="left">
+                <nav className="flex flex-col gap-4">
+                    <Button variant="ghost">Página Inicial</Button>
+                    <Button variant="ghost">Clientes</Button>
+                    <Button variant="ghost">Agenda</Button>
+                    <Button variant="ghost">Financeiro</Button>
+                    <Button variant="ghost">Rotinas</Button>
+                </nav>
+            </SheetContent>
+        </Sheet> */}
+
+        <div className='user flex flex-row items-center mb-50 mt-10'>
+            <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" />
+                <AvatarFallback>Avatar</AvatarFallback>
+            </Avatar>
+            <h1 className='mx-3'>Arthur Bernardo</h1>
+        </div>
+        <div className='navigation'>
+            <nav>
+                <div className='flex flex-row items-center'>
+                    <Button variant='ghost' className='text-lg'>
+                        <House className='icon' /> 
+                        Pagina Inicial
+                    </Button>
+                </div>
+                <div className='flex flex-row items-center'>
+                    <Button variant='ghost' className='text-lg'>
+                        <ContactRound className='icon' /> 
+                        Clientes
+                    </Button>
+                </div>
+                <div className='flex flex-row items-center'>
+                    <Button variant='ghost' className='text-lg'>
+                        <Calendar className='icon' /> 
+                        Agenda
+                    </Button>
+                </div>
+                <div className='flex flex-row items-center'>
+                    <Button variant='ghost' className='text-lg'>
+                        <CircleDollarSign className='icon' /> 
+                        Financeiro
+                    </Button>
+                </div>
+                <div className='routines mt-80'>
+                    <Accordion type="single" collapsible>
+                        <AccordionItem value="item-1">
+                            <div className='flex flex-row'>
+                                <Button variant='ghost' className='text-lg items-center'>
+                                    <NotebookPen className='icon' />
+                                    <AccordionTrigger className='mx-3 text-lg'>Cadastros</AccordionTrigger>
+                                </Button>
+                            </div>
+                            <AccordionContent className='mx-10'>
+                                <Link href="/">Rotinas</Link>
+                            </AccordionContent>
+                        </AccordionItem>
+                    </Accordion>
+                </div>
+            </nav>
+        </div>
+    </header>
+  );
+}

@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 export default function NavBar() {
   return(
-    <header className='mx-5 border-r-1 w-60'>
+    <header className='mx-5 border-r-1 w-60 h-screen'>
         {/* <Sheet>
             <SheetTrigger asChild>
                 <Button variant="ghost" size="icon" className="md:hidden">
@@ -70,7 +70,7 @@ export default function NavBar() {
                                 </Button>
                             </div>
                             <AccordionContent className='mx-10'>
-                                <Link href="/">Rotinas</Link>
+                                <Link href="/registers">Rotinas</Link>
                             </AccordionContent>
                         </AccordionItem>
                     </Accordion>

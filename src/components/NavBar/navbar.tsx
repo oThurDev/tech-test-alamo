@@ -39,7 +39,7 @@ export default function NavBar() {
                 <div className='flex flex-row items-center'>
                     <Button variant='ghost' className='text-lg'>
                         <House className='icon' /> 
-                        Pagina Inicial
+                        <Link href="/">Pagina Inicial</Link>
                     </Button>
                 </div>
                 <div className='flex flex-row items-center'>

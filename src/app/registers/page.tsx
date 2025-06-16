@@ -19,7 +19,7 @@ export default function Registers() {
     });
 
     return (
-        <div className="container mx-60 mt-10">
+        <div className="container mx-60 mt-10 lg:mx-20 md:mx-5">
             <header className="flex flex-row justify-between items-center">
                 <div className="left-nav">
                     <h1>Cadastros</h1>

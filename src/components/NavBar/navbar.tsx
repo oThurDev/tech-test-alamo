@@ -45,19 +45,19 @@ export default function NavBar() {
                 <div className='flex flex-row items-center'>
                     <Button variant='ghost' className='text-lg'>
                         <ContactRound className='icon' /> 
-                        Clientes
+                        <Link href="/user">Clientes</Link>
                     </Button>
                 </div>
                 <div className='flex flex-row items-center'>
                     <Button variant='ghost' className='text-lg'>
                         <Calendar className='icon' /> 
-                        Agenda
+                        <Link href="/calendar">Agenda</Link>
                     </Button>
                 </div>
                 <div className='flex flex-row items-center'>
                     <Button variant='ghost' className='text-lg'>
                         <CircleDollarSign className='icon' /> 
-                        Financeiro
+                        <Link href="/dashboard">Financeiro</Link>
                     </Button>
                 </div>
                 <div className='routines mt-80'>

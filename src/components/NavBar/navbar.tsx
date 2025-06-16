@@ -9,32 +9,54 @@ import Link from 'next/link';
 
 export default function NavBar() {
     return (
-        <header className='mx-5 border-r-1 w-60 h-screen'>
+        <header className='mx-5 border-r-1 w-60 h-screen items-center justify-center'>
             <Sheet>
                 <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon" className="">
+                    <Button variant="ghost" size="icon" className="lg:hidden">
                         <Menu className="h-6 w-6" />
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="left">
-                    <nav className="flex flex-col gap-4">
-                        <Button variant="ghost">Página Inicial</Button>
-                        <Button variant="ghost">Clientes</Button>
-                        <Button variant="ghost">Agenda</Button>
-                        <Button variant="ghost">Financeiro</Button>
-                        <Button variant="ghost">Rotinas</Button>
+                    <nav className="flex flex-col gap-4 justify-center items-center mt-10">
+                        <Button variant="ghost">
+                            <House className='icon' />
+                            <Link href="/">Pagina Inicial</Link>
+                        </Button>
+                        <Button variant="ghost">
+                            <ContactRound className='icon' />
+                            <Link href="/user">Clientes</Link>
+                        </Button>
+                        <Button variant="ghost">
+                            <Calendar className='icon' />
+                            <Link href="/calendar">Agenda</Link>
+                        </Button>
+                        <Button variant="ghost">
+                            <CircleDollarSign className='icon' />
+                            <Link href="/dashboard">Financeiro</Link>
+                        </Button>
+                        <Accordion type="single" collapsible>
+                            <AccordionItem value="item-1">
+                                <Button variant='ghost' className='items-center'>
+                                    <NotebookPen className='icon' />
+                                    <AccordionTrigger className='mx-3'>Cadastros</AccordionTrigger>
+                                </Button>
+                                <AccordionContent className='mx-10'>
+                                    <Link href="/registers">Rotinas</Link>
+                                </AccordionContent>
+                            </AccordionItem>
+                        </Accordion>
                     </nav>
                 </SheetContent>
             </Sheet>
 
             <div className='user flex flex-row items-center mb-50 mt-10'>
                 <Avatar>
-                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarImage src="https://github.com/OThurDev.png" />
                     <AvatarFallback>Avatar</AvatarFallback>
                 </Avatar>
-                <h1 className='mx-3 md:hidden'>Arthur Bernardo</h1>
+                <h1 className='mx-3 lg:flex md:hidden'>Arthur Bernardo</h1>
             </div>
-            <div className='navigation md:hidden'>
+            <div className='navigation lg:flex md:hidden'>
                 <nav>
                     <div className='flex flex-row items-center'>
                         <Button variant='ghost' className='text-lg'>

@@ -19,8 +19,8 @@ export default function Registers() {
     });
 
     return (
-        <div className="container-dialog mx-60 mt-10">
-            <header className="header-dialog flex flex-row justify-between items-center">
+        <div className="container-dash mx-60 mt-10">
+            <header className="header-dash flex flex-row justify-between items-center">
                 <div className="left-nav">
                     <h1>Cadastros</h1>
                 </div>

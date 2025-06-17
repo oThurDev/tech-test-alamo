@@ -8,6 +8,18 @@ import { CreateRoutine } from "@/components/CreateRoutine/createRoutine";
 
 import { useRoutineStore } from "../../store/useRoutineStore";
 
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+
 export default function Registers() {
     const routines = useRoutineStore(state => state.filteredRoutines);
 
@@ -75,9 +87,27 @@ export default function Registers() {
                         </Accordion>
                     </div>
                 )}
-                <Button onClick={reset} variant="destructive" className="mt-10">
-                    Limpar todas as rotinas
-                </Button>
+                <div className="mt-10">
+                    <AlertDialog>
+                        <AlertDialogTrigger>
+                            <Button variant="destructive">
+                                Limpar todas as rotinas
+                            </Button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                            <AlertDialogHeader>
+                                <AlertDialogTitle>Excluir todas as rotinas?</AlertDialogTitle>
+                                <AlertDialogDescription>
+                                    Esta ação não pode ser desfeita. Isso excluirá permanentemente todas as suas rotinas do site, tem certeza disso?
+                                </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                                <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                                <AlertDialogAction onClick={reset}>Continue</AlertDialogAction>
+                            </AlertDialogFooter>
+                        </AlertDialogContent>
+                    </AlertDialog>
+                </div>
             </section>
         </div>
     );

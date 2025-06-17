@@ -69,7 +69,7 @@ export default function NavBar() {
                     <div className='flex flex-row items-center'>
                         <Button variant='ghost' className='text-lg'>
                             <ContactRound className='icon' />
-                            <Link href="/user">Clientes</Link>
+                            <Link href="/clients">Clientes</Link>
                         </Button>
                     </div>
                     <div className='flex flex-row items-center'>

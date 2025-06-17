@@ -1,4 +1,5 @@
 import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 type Routine = {
     name: string
@@ -16,28 +17,38 @@ interface RoutineStore {
     filteredRoutines: Routine[]
     addRoutine: (routine: Routine) => void
     filterRoutines: (search: string) => void
+    reset: () => void
 }
 
-export const useRoutineStore = create<RoutineStore>((set, get) => ({
-    routines: [],
-    filteredRoutines: [],
+export const useRoutineStore = create<RoutineStore>()(
+    persist(
+        (set, get) => ({
+            routines: [],
+            filteredRoutines: [],
 
-    addRoutine: (routine) => set((state) => {
-        const updated = [...state.routines, routine].sort((a, b) => a.hour.localeCompare(b.hour))
-        return {
-            routines: updated,
-            filteredRoutines: updated,
+            addRoutine: (routine) => set((state) => {
+                const updated = [...state.routines, routine].sort((a, b) => a.hour.localeCompare(b.hour))
+                return {
+                    routines: updated,
+                    filteredRoutines: updated,
+                }
+            }),
+
+            filterRoutines: (search) => {
+                const searchLower = search.toLowerCase()
+
+                const filtered = get().routines.filter(routine =>
+                    routine.name.toLowerCase().includes(searchLower) ||
+                    routine.hour.includes(searchLower)
+                )
+
+                set({ filteredRoutines: filtered })
+            },
+
+            reset: () => set({ routines: [], filteredRoutines: [] }),
+        }),
+        {
+            name: 'routine-storage',
         }
-    }),
-
-    filterRoutines: (search) => {
-        const searchLower = search.toLowerCase()
-
-        const filtered = get().routines.filter(routine =>
-            routine.name.toLowerCase().includes(searchLower) ||
-            routine.hour.includes(searchLower)
-        )
-
-        set({ filteredRoutines: filtered })
-    },
-}))
+    )
+)

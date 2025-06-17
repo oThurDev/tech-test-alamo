@@ -8,6 +8,18 @@ import { CreateRoutine } from "@/components/CreateRoutine/createRoutine";
 
 import { useRoutineStore } from "../../store/useRoutineStore";
 
+import {
+    AlertDialog,
+    AlertDialogAction,
+    AlertDialogCancel,
+    AlertDialogContent,
+    AlertDialogDescription,
+    AlertDialogFooter,
+    AlertDialogHeader,
+    AlertDialogTitle,
+    AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
+
 export default function Registers() {
     const routines = useRoutineStore(state => state.filteredRoutines);
 
@@ -18,8 +30,10 @@ export default function Registers() {
         return aHour !== bHour ? aHour - bHour : aMinute - bMinute;
     });
 
+    const reset = useRoutineStore(state => state.reset)
+
     return (
-        <div className="container-dash mx-60 mt-10">
+        <div className="container-dash mt-10">
             <header className="header-dash flex flex-row justify-between items-center">
                 <div className="left-nav">
                     <h1>Cadastros</h1>
@@ -73,6 +87,27 @@ export default function Registers() {
                         </Accordion>
                     </div>
                 )}
+                <div className="mt-10">
+                    <AlertDialog>
+                        <AlertDialogTrigger>
+                            <Button variant="destructive">
+                                Limpar todas as rotinas
+                            </Button>
+                        </AlertDialogTrigger>
+                        <AlertDialogContent>
+                            <AlertDialogHeader>
+                                <AlertDialogTitle>Excluir todas as rotinas?</AlertDialogTitle>
+                                <AlertDialogDescription>
+                                    Esta ação não pode ser desfeita. Isso excluirá permanentemente todas as suas rotinas do site, tem certeza disso?
+                                </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                                <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                                <AlertDialogAction onClick={reset}>Continue</AlertDialogAction>
+                            </AlertDialogFooter>
+                        </AlertDialogContent>
+                    </AlertDialog>
+                </div>
             </section>
         </div>
     );

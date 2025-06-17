@@ -84,7 +84,7 @@ export default function NavBar() {
                             <Link href="/dashboard">Financeiro</Link>
                         </Button>
                     </div>
-                    <div className='routines mt-60'>
+                    <div className='routines mt-40'>
                         <Accordion type="single" collapsible>
                             <AccordionItem value="item-1">
                                 <div className='flex flex-row'>

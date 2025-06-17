@@ -18,8 +18,10 @@ export default function Registers() {
         return aHour !== bHour ? aHour - bHour : aMinute - bMinute;
     });
 
+    const reset = useRoutineStore(state => state.reset)
+
     return (
-        <div className="container-dash mx-60 mt-10">
+        <div className="container-dash mt-10">
             <header className="header-dash flex flex-row justify-between items-center">
                 <div className="left-nav">
                     <h1>Cadastros</h1>
@@ -73,6 +75,9 @@ export default function Registers() {
                         </Accordion>
                     </div>
                 )}
+                <Button onClick={reset} variant="destructive" className="mt-10">
+                    Limpar todas as rotinas
+                </Button>
             </section>
         </div>
     );

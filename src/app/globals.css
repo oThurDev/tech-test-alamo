@@ -116,7 +116,110 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+  }
+}
+
+.navigation,
+.name {
+  @media (max-width: 768px) and (min-width: 320px) {
+    display: none;
+  }
+}
+
+.user {
+  @media (max-width: 1440px) and (min-width: 768px) {
+    margin-bottom: 40px;
+  }
+}
+
+.avatar {
+  @media (max-width: 768px) and (min-width: 320px) {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.icon-menu {
+  @media (max-width: 768px) and (min-width: 320px) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.container-dash {
+  @media (max-width: 2560px) and (min-width: 425px) {
+    margin-right: 30px;
+    margin-left: 30px;
+    width: 1000px;
+  }
+
+  @media (max-width: 768px) and (min-width: 425px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  @media (max-width: 425px) and (min-width: 320px) {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .header-dash {
+      margin-top: 20px;
+      gap: 30px;
+
+      >.left-nav {
+        >h1 {
+          font-size: 12px;
+        }
+      }
+
+      >.right-nav {
+        >.icon-config {
+          display: none;
+        }
+
+        >.tasks {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    >.navsTitle {
+      display: flex;
+      flex-direction: column;
+
+      >h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.inputs {
+  @media (max-width: 425px) and (min-width: 320px) {
+    display: flex;
+    flex-direction: column;
+
+    >.input-page {
+      width: 200px;
+    }
+  }
+}
+
+.navbar {
+  margin: 0 10px;
+
+  @media (width: 425px) {
+    width: 80px;
+  }
+
+  @media (max-width: 768px) and (min-width: 320px) {
+    width: 60px;
   }
 }

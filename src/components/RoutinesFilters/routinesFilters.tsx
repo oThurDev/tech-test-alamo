@@ -27,9 +27,9 @@ export function RoutinesFilters() {
     return (
         <form onSubmit={handleSubmit(handleFilterRoutines)} className="my-10">
             <div className="inputs flex flex-row gap-5">
-                <Input type="text" className="w-xs" placeholder="Buscar por nome ou horário..." {...register('search')} />
-                <Button type="submit" className="bg-purple-600">Buscar</Button>
-                <Button>Filtragem Avançada</Button>
+                <Input type="text" className="input-page w-xs" placeholder="Buscar por nome ou horário..." {...register('search')} />
+                <Button type="submit" className="input-page bg-purple-600">Buscar</Button>
+                <Button className="input-page">Filtragem Avançada</Button>
             </div>
         </form>
     )

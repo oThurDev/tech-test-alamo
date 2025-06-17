@@ -19,16 +19,16 @@ export default function Registers() {
     });
 
     return (
-        <div className="container mx-60 mt-10 lg:mx-20 md:mx-5">
-            <header className="flex flex-row justify-between items-center">
+        <div className="container-dialog mx-60 mt-10">
+            <header className="header-dialog flex flex-row justify-between items-center">
                 <div className="left-nav">
                     <h1>Cadastros</h1>
                 </div>
                 <div className="right-nav flex flex-row items-center gap-3">
-                    <Button className="bg-purple-600"><ListChecks />Tarefas</Button>
-                    <Inbox />
-                    <Info />
-                    <Cog />
+                    <Button className="tasks bg-purple-600"><ListChecks />Tarefas</Button>
+                    <Inbox className="icon-config" />
+                    <Info className="icon-config" />
+                    <Cog className="icon-config" />
                 </div>
             </header>
 

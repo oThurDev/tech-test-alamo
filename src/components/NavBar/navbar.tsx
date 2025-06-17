@@ -9,11 +9,11 @@ import Link from 'next/link';
 
 export default function NavBar() {
     return (
-        <header className='mx-5 border-r-1 w-60 h-screen items-center justify-center'>
+        <header className='navbar mx-5 border-r-1 w-60 h-screen items-center justify-center'>
             <Sheet>
                 <SheetTrigger asChild>
                     <Button variant="ghost" size="icon" className="lg:hidden">
-                        <Menu className="h-6 w-6" />
+                        <Menu className="icon-menu h-6 w-6" />
                     </Button>
                 </SheetTrigger>
                 <SheetContent side="left">
@@ -36,7 +36,7 @@ export default function NavBar() {
                         </Button>
                         <Accordion type="single" collapsible>
                             <AccordionItem value="item-1">
-                                <Button variant='ghost' className='items-center'>
+                                <Button variant='ghost' className='items-center mt-40'>
                                     <NotebookPen className='icon' />
                                     <AccordionTrigger className='mx-3'>Cadastros</AccordionTrigger>
                                 </Button>
@@ -50,13 +50,13 @@ export default function NavBar() {
             </Sheet>
 
             <div className='user flex flex-row items-center mb-50 mt-10'>
-                <Avatar>
+                <Avatar className="avatar">
                     <AvatarImage src="https://github.com/OThurDev.png" />
                     <AvatarFallback>Avatar</AvatarFallback>
                 </Avatar>
-                <h1 className='mx-3 lg:flex md:hidden'>Arthur Bernardo</h1>
+                <h1 className='name mx-3'>Arthur Bernardo</h1>
             </div>
-            <div className='navigation lg:flex md:hidden'>
+            <div className='navigation'>
                 <nav>
                     <div className='flex flex-row items-center'>
                         <Button variant='ghost' className='text-lg'>

@@ -120,3 +120,75 @@
     @apply bg-background text-foreground;
   }
 }
+
+.navigation, .name{
+  @media (max-width: 768px) and (min-width: 320px) {
+    display: none;
+  }
+}
+
+.avatar {
+  @media (max-width: 768px) and (min-width: 320px) {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+.icon-menu {
+  @media (max-width: 768px) and (min-width: 320px) {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.container-dialog {
+  @media (max-width: 768px) and (min-width: 425px) {
+    margin: 0 10px;
+  }
+
+  @media (max-width: 425px) and (min-width: 320px) {
+    margin: 0;
+
+    .header-dialog {
+      margin-top: 20px;
+
+      > .left-nav {
+        > h1 {
+          font-size: 12px;
+        }
+      }
+
+      > .right-nav {
+        > .icon-config {
+          display: none;
+        }
+
+        > .tasks {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    > .navsTitle {
+      display: flex;
+      flex-direction: column;
+
+      > h1 {
+        text-align: center;
+        margin-bottom: 10px;
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+.inputs {
+  @media (max-width: 425px) and (min-width: 320px) {
+    display: flex;
+    flex-direction: column;
+
+    > .input-page {
+      width: 200px;
+    }
+  }
+}

@@ -87,28 +87,33 @@ export default function Registers() {
                         </Accordion>
                     </div>
                 )}
-                <div className="mt-10">
-                    <AlertDialog>
-                        <AlertDialogTrigger>
-                            <Button variant="destructive">
-                                Limpar todas as rotinas
-                            </Button>
-                        </AlertDialogTrigger>
-                        <AlertDialogContent>
-                            <AlertDialogHeader>
-                                <AlertDialogTitle>Excluir todas as rotinas?</AlertDialogTitle>
-                                <AlertDialogDescription>
-                                    Esta ação não pode ser desfeita. Isso excluirá permanentemente todas as suas rotinas do site, tem certeza disso?
-                                </AlertDialogDescription>
-                            </AlertDialogHeader>
-                            <AlertDialogFooter>
-                                <AlertDialogCancel>Cancelar</AlertDialogCancel>
-                                <AlertDialogAction onClick={reset}>Continue</AlertDialogAction>
-                            </AlertDialogFooter>
-                        </AlertDialogContent>
-                    </AlertDialog>
-                </div>
-            </section>
-        </div>
+                {routines.length === 0 ? (
+                    <div className="hidden"></div>
+                ) : (
+                    <div className="mt-10">
+                        <AlertDialog>
+                            <AlertDialogTrigger>
+                                <Button variant="destructive">
+                                    Limpar todas as rotinas
+                                </Button>
+                            </AlertDialogTrigger>
+                            <AlertDialogContent>
+                                <AlertDialogHeader>
+                                    <AlertDialogTitle>Excluir todas as rotinas?</AlertDialogTitle>
+                                    <AlertDialogDescription>
+                                        Esta ação não pode ser desfeita. Isso excluirá permanentemente todas as suas rotinas do site, tem certeza disso?
+                                    </AlertDialogDescription>
+                                </AlertDialogHeader>
+                                <AlertDialogFooter>
+                                    <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                                    <AlertDialogAction onClick={reset}>Continue</AlertDialogAction>
+                                </AlertDialogFooter>
+                            </AlertDialogContent>
+                        </AlertDialog >
+                    </div >
+                )
+                }
+            </section >
+        </div >
     );
 }
